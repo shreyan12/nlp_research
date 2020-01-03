@@ -1,0 +1,61 @@
+import spacy
+nlp = spacy.load("en_core_web_sm")
+
+#1
+file1 = open("research.file.txt").read()
+my_doc = nlp(file1)
+sentence_list = []
+count2 = 0
+for sent in doc.sents:
+  sentence_list.append(sent.text)
+  count2 = count2 + 1
+  
+print("The number of sentences is ", count)
+
+#2
+file1 = open("research.file.txt").read()
+my_doc = nlp(file1)
+token_list = []
+count = 0
+for token in my_doc:
+  token_list.append(token.text)
+  count = count + 1
+  
+print("The number of tokens is ", count)
+
+#3
+file1 = open("research.file.txt").read()
+my_doc = nlp(file1)
+sentence_list = []
+token_list = []
+count = 0
+count2 = 0
+for token in my_doc:
+  token_list.append(token.text)
+  count = count +1
+
+doc = nlp(file1)
+for sent in doc.sents:
+  sentence_list.append(sent.text)
+  count2 = count2 + 1
+  
+avg = count/count2
+print("The average number of tokens per sentence is ", avg)
+
+#4
+file1 = open("research.file.txt").read()
+doc = nlp(file1)
+for token in doc:
+  array1.append(token.pos_)
+  
+def pos(array2):
+  size = len(array2)
+  unique_tags = []
+  for i in range(size):
+    x = i + 1
+    for j in range(x, size):
+      if array2[i] == array2[j] and array2[i] not in unique_tags:
+         unique_tags.append(array2[i])
+  return len(unique_tags)       
+
+print(pos(array1))
